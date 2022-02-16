@@ -1,0 +1,6 @@
+spring:
+  # 环境 local|prod
+  application:
+    name: datax-cloud-alibaba
+  profiles:
+    active: local
