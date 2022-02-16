@@ -13,7 +13,7 @@
     <description>spring cloud test</description>
 
     <modules>
-        <module>springcloud-alibaba</module>
+        <module>springcloud-test-alibaba</module>
         <module>springcloud-test-dependencies</module>
     </modules>
 

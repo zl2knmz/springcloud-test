@@ -1,2 +1,7 @@
 
-springcloud-alibaba/target/classes/
+*/target/classes/
+
+.idea/*
+
+
+.idea/

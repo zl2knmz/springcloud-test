@@ -12,12 +12,12 @@
           <entry name="$PROJECT_DIR$/../../repository/org/mapstruct/mapstruct-processor/1.4.1.Final/mapstruct-processor-1.4.1.Final.jar" />
           <entry name="$PROJECT_DIR$/../../repository/org/mapstruct/mapstruct/1.4.1.Final/mapstruct-1.4.1.Final.jar" />
         </processorPath>
-        <module name="springcloud-alibaba" />
+        <module name="springcloud-test-alibaba" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="springcloud-alibaba" target="1.8" />
       <module name="springcloud-test" target="1.8" />
+      <module name="springcloud-test-alibaba" target="1.8" />
       <module name="springcloud-test-dependencies" target="1.8" />
     </bytecodeTargetLevel>
   </component>
