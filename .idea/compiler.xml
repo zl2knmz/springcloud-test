@@ -26,6 +26,7 @@
       <module name="springcloud-test" target="1.8" />
       <module name="springcloud-test-alibaba" target="1.8" />
       <module name="springcloud-test-dependencies" target="1.8" />
+      <module name="springcloud-test-shiro" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
