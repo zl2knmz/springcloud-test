@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.liang</groupId>
-    <artifactId>springcloud-alibaba</artifactId>
+    <artifactId>springcloud-test-alibaba</artifactId>
     <version>1.0-0</version>
 
     <dependencies>
