@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  liang.springcloud.boot.starter.com.liang.LiangAutoConfigure

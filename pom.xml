@@ -15,6 +15,7 @@
     <modules>
         <module>springcloud-test-alibaba</module>
         <module>springcloud-test-dependencies</module>
+        <!--<module>liang-spring-boot-starter</module>-->
     </modules>
 
     <properties>
