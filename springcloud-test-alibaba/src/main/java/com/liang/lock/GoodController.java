@@ -4,6 +4,7 @@ import com.liang.redis.service.RedisService;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.UUID;
 
@@ -12,7 +13,9 @@ import java.util.UUID;
  * @date 2022/5/27 23:56
  */
 public class GoodController {
-    private final int serverPort = 8888;
+    @Value("${server.port}")
+    private int serverPort;
+
     private final String REDIS_LOCK = "good_lock";
 
     @Autowired

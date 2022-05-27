@@ -4,3 +4,14 @@ spring:
     name: datax-cloud-alibaba
   profiles:
     active: local
+  redis:
+    database: 0
+    port: 6379
+    host: 192.168.99.100
+    lettuce:
+      pool:
+        max-idle: 8
+        min-idle: 5
+        max-active: 10
+        max-wait: 1000s
+    timeout: 1000s

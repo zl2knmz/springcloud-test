@@ -1,10 +1,11 @@
 package com.liang.redis.utils;
 
-import com.huodongxing.base.core.constant.BaseConstants;
-import com.huodongxing.base.core.constant.CacheConstants;
-import com.huodongxing.base.core.utils.SpringUtils;
-import com.huodongxing.base.core.utils.StringUtils;
-import com.huodongxing.datax.base.redis.service.RedisService;
+
+import com.liang.constant.BaseConstants;
+import com.liang.constant.CacheConstants;
+import com.liang.redis.service.RedisService;
+import com.liang.utils.SpringUtils;
+import com.liang.utils.StringUtils;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
