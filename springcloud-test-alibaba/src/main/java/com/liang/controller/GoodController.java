@@ -1,4 +1,4 @@
-package com.liang.lock;
+package com.liang.controller;
 
 import com.liang.redis.service.RedisService;
 import io.swagger.annotations.Api;
