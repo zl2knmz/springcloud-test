@@ -7,7 +7,7 @@ spring:
   redis:
     database: 0
     port: 6379
-    host: 192.168.99.100
+    host: 192.168.1.128
     lettuce:
       pool:
         max-idle: 8

@@ -1,10 +1,15 @@
 package com.liang.lock;
 
 import com.liang.redis.service.RedisService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
@@ -12,20 +17,27 @@ import java.util.UUID;
  * @author zl
  * @date 2022/5/27 23:56
  */
+@Api(tags = "商品管理")
+@Slf4j
+@RestController
+@AllArgsConstructor
+@RequestMapping("/good")
 public class GoodController {
-    @Value("${server.port}")
-    private int serverPort;
-
     private final String REDIS_LOCK = "good_lock";
 
-    @Autowired
-    private Redisson redisson;
+//    @Value("${server.port}")
+    private final String serverPort = "8080";
 
-    @Autowired
-    private RedisService redisService;
+    private final Redisson redisson;
 
-    public String buyGoods() throws Exception {
-//        String vlaue = UUID.randomUUID().toString() + Thread.currentThread().getName();
+    private final RedisService redisService;
+
+    @ApiOperation(value = "获取库存")
+    @GetMapping("/buy_good")
+    public String buyGoods() {
+        String value = UUID.randomUUID().toString() + Thread.currentThread().getName();
+        log.info(value);
+
         RLock redissonLock = redisson.getLock(REDIS_LOCK);
         redissonLock.lock();
         String goodsKey = "goods:001";
@@ -36,10 +48,10 @@ public class GoodController {
             if (goodsNumber > 0) {
                 int realNumber = goodsNumber - 1;
                 redisService.set(goodsKey, String.valueOf(realNumber));
-                System.out.println("成功买到商品，库存还剩下：" + realNumber + " 件 \t 服务提供端口：" + serverPort);
+                log.info("成功买到商品，库存还剩下：" + realNumber + " 件 \t 服务提供端口：" + serverPort);
                 return "成功买到商品，库存还剩下：" + realNumber + " 件 \t 服务提供端口：" + serverPort;
             } else {
-                System.out.println("商品已经售罄，欢迎下次光临 \t 服务提供端口：" + serverPort);
+                log.info("商品已经售罄，欢迎下次光临 \t 服务提供端口：" + serverPort);
             }
             return  "商品已经售罄，欢迎下次光临 \t 服务提供端口：" + serverPort;
         } finally {
@@ -50,7 +62,4 @@ public class GoodController {
 
     }
 
-    public static void main(String[] args) {
-
-    }
 }
