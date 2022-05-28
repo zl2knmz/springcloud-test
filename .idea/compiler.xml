@@ -8,23 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="liang-spring-boot-starter" />
-      </profile>
-      <profile name="Annotation profile for springcloud-test" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.1.Final/mapstruct-processor-1.4.1.Final.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.1.Final/mapstruct-1.4.1.Final.jar" />
-        </processorPath>
         <module name="springcloud-test-alibaba" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="liang-spring-boot-starter" target="8" />
-      <module name="springcloud-test" target="1.8" />
-      <module name="springcloud-test-alibaba" target="1.8" />
+      <module name="springcloud-test" target="8" />
+      <module name="springcloud-test-alibaba" target="8" />
       <module name="springcloud-test-dependencies" target="1.8" />
       <module name="springcloud-test-shiro" target="8" />
     </bytecodeTargetLevel>
