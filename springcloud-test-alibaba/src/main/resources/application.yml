@@ -1,5 +1,5 @@
 spring:
-  # 环境 local|prod
+  # 环境 local|test|prod
   application:
     name: liang-cloud-alibaba
   profiles:
