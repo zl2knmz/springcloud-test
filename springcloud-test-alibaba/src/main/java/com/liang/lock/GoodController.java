@@ -3,14 +3,15 @@ package com.liang.lock;
 import com.liang.redis.service.RedisService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.redisson.Redisson;
 import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.UUID;
 
 /**
@@ -20,17 +21,18 @@ import java.util.UUID;
 @Api(tags = "商品管理")
 @Slf4j
 @RestController
-@AllArgsConstructor
 @RequestMapping("/good")
 public class GoodController {
     private final String REDIS_LOCK = "good_lock";
 
-//    @Value("${server.port}")
-    private final String serverPort = "8080";
+    @Value("${server.port}")
+    private Integer serverPort;
 
-    private final Redisson redisson;
+    @Resource
+    private RedissonClient redissonClient;
 
-    private final RedisService redisService;
+    @Resource
+    private RedisService redisService;
 
     @ApiOperation(value = "获取库存")
     @GetMapping("/buy_good")
@@ -38,7 +40,7 @@ public class GoodController {
         String value = UUID.randomUUID().toString() + Thread.currentThread().getName();
         log.info(value);
 
-        RLock redissonLock = redisson.getLock(REDIS_LOCK);
+        RLock redissonLock = redissonClient.getLock(REDIS_LOCK);
         redissonLock.lock();
         String goodsKey = "goods:001";
 
@@ -53,7 +55,7 @@ public class GoodController {
             } else {
                 log.info("商品已经售罄，欢迎下次光临 \t 服务提供端口：" + serverPort);
             }
-            return  "商品已经售罄，欢迎下次光临 \t 服务提供端口：" + serverPort;
+            return "商品已经售罄，欢迎下次光临 \t 服务提供端口：" + serverPort;
         } finally {
             if (redissonLock.isLocked() && redissonLock.isHeldByCurrentThread()) {
                 redissonLock.unlock();

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ImportResource;
  * @author zl
  */
 //@ImportResource(locations = "config/applicationContext.xml")
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.liang"})
 public class TestApplication {
 
 	public static void main(String[] args) {

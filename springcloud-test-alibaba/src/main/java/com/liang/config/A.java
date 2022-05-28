@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * @author zl
  * @date 2022/5/22 11:52
  */
-@Component
+//@Component
 public class A {
 
     private B b;
