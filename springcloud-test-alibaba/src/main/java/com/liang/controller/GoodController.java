@@ -23,7 +23,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/good")
 public class GoodController {
-    private final String REDIS_LOCK = "good_lock";
+    private static final String REDIS_LOCK = "good_lock";
 
     @Value("${server.port}")
     private Integer serverPort;
