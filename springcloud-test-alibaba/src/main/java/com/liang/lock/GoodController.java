@@ -49,7 +49,7 @@ public class GoodController {
             int goodsNumber = result == null ? 0 : Integer.parseInt(result);
             if (goodsNumber > 0) {
                 int realNumber = goodsNumber - 1;
-                redisService.set(goodsKey, String.valueOf(realNumber));
+                redisService.set(goodsKey, realNumber);
                 log.info("成功买到商品，库存还剩下：" + realNumber + " 件 \t 服务提供端口：" + serverPort);
                 return "成功买到商品，库存还剩下：" + realNumber + " 件 \t 服务提供端口：" + serverPort;
             } else {
