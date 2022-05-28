@@ -143,6 +143,13 @@
                 <version>30.1-jre</version>
             </dependency>
 
+            <!--集成logstash-->
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>4.8</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
