@@ -14,6 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="liang-spring-boot-starter" target="8" />
+      <module name="spring-aop" target="8" />
       <module name="springaop" target="8" />
       <module name="springaspect" target="8" />
       <module name="springcloud-test" target="8" />

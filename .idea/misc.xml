@@ -13,6 +13,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/spring-aop/pom.xml" />
         <option value="$PROJECT_DIR$/spring-aspect/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-test-shiro/pom.xml" />
       </set>
