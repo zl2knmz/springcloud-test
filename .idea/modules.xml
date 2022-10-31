@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/liang-spring-boot-starter/liang-spring-boot-starter.iml" filepath="$PROJECT_DIR$/liang-spring-boot-starter/liang-spring-boot-starter.iml" />
+<<<<<<< Updated upstream
       <module fileurl="file://$PROJECT_DIR$/spring-aop/spring-aop.iml" filepath="$PROJECT_DIR$/spring-aop/spring-aop.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-aop/springaop.iml" filepath="$PROJECT_DIR$/spring-aop/springaop.iml" />
+=======
+>>>>>>> Stashed changes
       <module fileurl="file://$PROJECT_DIR$/.idea/springcloud-test.iml" filepath="$PROJECT_DIR$/.idea/springcloud-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-test-alibaba/springcloud-test-alibaba.iml" filepath="$PROJECT_DIR$/springcloud-test-alibaba/springcloud-test-alibaba.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-test-dependencies/springcloud-test-dependencies.iml" filepath="$PROJECT_DIR$/springcloud-test-dependencies/springcloud-test-dependencies.iml" />

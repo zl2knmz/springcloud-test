@@ -28,7 +28,7 @@ public class RedissionConfig {
 //                setAddress("redis://" + lettuceConnectionFactory.getHostName() + ":" + lettuceConnectionFactory.getPort());
 
         SingleServerConfig singleServerConfig = config.useSingleServer().
-                setAddress("redis://192.168.1.128:6379" );
+                setAddress("redis://192.168.16.225:6379" );
 //        String password = lettuceConnectionFactory.getPassword();
         String password = null;
         if (StringUtils.isNotBlank(password)) {
